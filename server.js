@@ -38,7 +38,7 @@ app.post('/test', function (request, response) {
   });
 
     //Get Data
-app.get('/test2', function (request, response) {
+app.get('/', function (request, response) {
     //console.log(lol);
     
     response.send({...lol})
