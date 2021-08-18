@@ -35,8 +35,9 @@ app.post('/test', function (request, response) {
     //console.log(request.body);
     if(request.body.pass){
     lol = request.body;
-    response.send({"lol":request.body});
   };
+  response.send({"lol":request.body});
+
   });
 
     //Get Data
