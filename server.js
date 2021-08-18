@@ -33,7 +33,7 @@ function listening(){
   //Get Data
 app.post('/test', function (request, response) {
     //console.log(request.body);
-    lol = request.body;
+    lol.push(request.body);
     response.send({"lol":request.body});
   });
 
