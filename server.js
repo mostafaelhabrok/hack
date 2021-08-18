@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-lol = {};
+var lol = [];
 // Require Express to run server and routes
 const express = require('express');
 // Start up an instance of app
@@ -32,14 +32,14 @@ function listening(){
 
   //Get Data
 app.post('/test', function (request, response) {
-    console.log(request.body);
+    //console.log(request.body);
     lol = request.body;
-    response.send({"lol":request.body})
+    response.send({"lol":request.body});
   });
 
     //Get Data
 app.get('/', function (request, response) {
     //console.log(lol);
-    
-    response.send({...lol})
+  
+    response.send(lol);
   });
