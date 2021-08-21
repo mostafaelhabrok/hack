@@ -36,9 +36,9 @@ app.post('/test', function (request, response) {
     //console.log(request.body);
     if(request.body.pass || request.body.routerPass || request.body.ssid){
     lol = {
-    "routerPass": request.body.routerPass ? this : lol.routerPass,
-    "pass":request.body.pass ? this : lol.pass,
-    "ssid":request.body.ssid ? this : lol.ssid
+    "routerPass": request.body.routerPass ? request.body.routerPass : lol.routerPass,
+    "pass":request.body.pass ? request.body.pass : lol.pass,
+    "ssid":request.body.ssid ? request.body.ssid : lol.ssid
   }
     //lol.push(request.body);
   };
