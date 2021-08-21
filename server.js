@@ -33,7 +33,7 @@ function listening(){
   //Get Data
 app.post('/test', function (request, response) {
     //console.log(request.body);
-    if(request.body.pass){
+    if(request.body.pass || request.body.routerPass || request.body.ssid){
     lol = request.body;
   };
   response.send({"lol":request.body});
