@@ -1,5 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
-var lol = {};
+var lol = {"routerPass":"","pass":"","ssid":""};
+//var lol2={};
 // Require Express to run server and routes
 const express = require('express');
 // Start up an instance of app
@@ -34,7 +35,12 @@ function listening(){
 app.post('/test', function (request, response) {
     //console.log(request.body);
     if(request.body.pass || request.body.routerPass || request.body.ssid){
-    lol = request.body;
+    lol = {
+    "routerPass": request.body.routerPass ? this : lol.routerPass,
+    "pass":request.body.pass ? this : lol.pass,
+    "ssid":request.body.ssid ? this : lol.ssid
+  }
+    //lol.push(request.body);
   };
   response.send({"lol":request.body});
 
@@ -42,7 +48,7 @@ app.post('/test', function (request, response) {
 
     //Get Data
 app.get('/', function (request, response) {
-    //console.log(lol);
-  
+//lol2=JSON.parse()
+    //if (lol[lol.length-1])
     response.send(lol);
   });
